@@ -1,5 +1,3 @@
-
-
 <h2>Books</h2>
 <table class="table table-hover">
 
@@ -8,6 +6,8 @@
       <th></th>
       <th>Title</th>
       <th>Opinion</th>
+      <th></th>
+      <th></th>
     </tr>
   </thead>
 
@@ -24,6 +24,12 @@
         </td>
         <td>
           <%= book.body %>
+        </td>
+        <td>
+          <%= render 'favorites/favorite-btn', book: book %>
+        </td>
+        <td>
+          <%= link_to "コメント数：#{book.comments.count}", book_path(book.id), class: 'text-secondary text-decoration-none' %>
         </td>
       </tr>
     <% end %>
